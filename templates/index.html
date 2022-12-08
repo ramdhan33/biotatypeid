@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nama Aplikasi</title>
+</head>
+<body>
+    {%if ready_to_predict %}
+    <img src={{url_for('static', filename="image_tobe_predicted.jpg")}} alt="hasil">
+    {%endif%}
+    <form  method="post" enctype="multipart/form-data" action="/hasil">
+        <input type="file" name="gambar" id="">
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>

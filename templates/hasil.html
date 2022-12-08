@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nama Aplikasi</title>
+    <link rel="stylesheet" href={{url_for('static', filename='style.css')}} />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="layar-dalam">
+        <div class="logo">
+            <a href=""><img src="/img/logo-removebg-preview1.png" class="putih" /></a>
+        </div>
+        <div class="menu">
+            <a href="#" class="tombol-menu">
+            <span class="garis"></span>
+            <span class="garis"></span>
+            <span class="garis"></span>
+            </a>
+            <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#aboutus">About Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="/getstarted" class="active">Get Started</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <h1>Hasil prediksinya adalah:</h1>
+    <img src={{url_for('static', filename="image_tobe_predicted.jpg")}} alt="hasil" style="float:middle;width:500px;height400px;border="5">
+    
+    <table>
+        <tr>
+            <td width="200px">Nama Spesies</td>
+            <td>: {{ result.nama_spesies }}</td>
+        </tr>
+        <tr>
+            <td width="200px">Nama Ilmiah</td>
+            <td>: {{ result.nama_ilmiah }}</td>
+        </tr>
+        <tr>
+            <td width="200">Habitat</td>
+            <td>: {{ result.habitat }}</td>
+        </tr>
+        <tr>
+            <td width="200">Toleransi Hidup Salinitas</td>
+            <td>: {{ result.toleransi_hidup_salinitas }}</td>
+        </tr>
+        <tr>
+            <td width="200">Toleransi Hidup SPL</td>
+            <td>: {{ result.toleransi_hidup_spl }}</td>
+        </tr>
+        <tr>
+            <td width="200">Deskripsi</td>
+            <td>: {{ result.deskripsi }}</td>
+        </tr>
+    </table>
+    <a href="/">Back to Home</a>
+</body>
+</html>
