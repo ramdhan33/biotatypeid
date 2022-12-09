@@ -64,6 +64,11 @@ def show_result():
 def get_started_page():
     return render_template("index.html")
 
+@app.route("/webgis")
+def webgis():
+    return render_template("webgis.html")
+
+
 @app.after_request
 def add_header(response):
     """

@@ -4,15 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nama Aplikasi</title>
+    <title>BiotaTypeID</title>
+    <link rel="stylesheet" href={{url_for('static', filename="assets/css/style.css")}} />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
+    <main id="main" class="main">
+        <!-- hero section -->
+        <!--<section id="hero" class="hero">-->
+          <!-- navbar section -->
+          <nav class="nav">
+            <div class="nav-container">
+              <div class="nav-brand">
+                <a href="#">
+                  <img src={{url_for('static', filename="/assets/img/logo-removebg-preview.png")}} class="putih" alt="nav-logo" width="120"/>
+                </a>
+              </div>
+              <div class="nav-items">
+                <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="/webgis">Webgis</a></li>
+                  <li><a href="#gallery">Gallery</a></li>
+                  <li><a href="#team">Team</a></li>
+                  <li><a href="#blog">Blog</a></li>
+                  <li><a href="#footer">Contact</a></li>
+                  <li><a href="/getstarted" class="active">Get Started</a></li>
+                </ul>
+              </div>
+              <div class="nav-toggle">
+                <a href="#">
+                  <i class="fa-solid fa-bars"></i>
+                </a>
+              </div>
+            </div>
+          </nav>
     {%if ready_to_predict %}
     <img src={{url_for('static', filename="image_tobe_predicted.jpg")}} alt="hasil">
     {%endif%}
-    <form  method="post" enctype="multipart/form-data" action="/hasil">
+    <form class="file-upload"  method="post" enctype="multipart/form-data" action="/hasil">
         <input type="file" name="gambar" id="">
         <button type="submit">Upload</button>
     </form>
+    <script src={{url_for('static', filename="/assets/js/javascript.js")}}></script>
 </body>
 </html>

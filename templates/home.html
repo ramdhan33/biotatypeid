@@ -1,243 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Object Detection-Biotatype.id</title>
-    <link rel="stylesheet" href={{url_for('static', filename='style.css')}} />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-</head>
-<body>
-    <nav>
-        <div class="layar-dalam">
-        <div class="logo">
-            <a href=""><img src="/img/logo-removebg-preview1.png" class="putih" /></a>
-        </div>
-        <div class="menu">
-            <a href="#" class="tombol-menu">
-            <span class="garis"></span>
-            <span class="garis"></span>
-            <span class="garis"></span>
-            </a>
-            <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#aboutus">About Us</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="/getstarted" class="active">Get Started</a></li>
-            </ul>
-        </div>
-        </div>
-    </nav>
-    <div class="layar-penuh">
-        <header id="home">
-        <div class="overlay"></div>
-        <video autoplay muted loop>
-            <source src="asset/video-indonesia.mp4" type="video/mp4" />
-        </video>
-        <div class="intro">
-            <h3>Laut Indonesia</h3>
+    <title>BiotatypeID</title>
+    <!-- link css -->
+    <link rel="stylesheet" href={{url_for('static', filename="assets/css/style.css")}} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <!-- end link css -->
+  </head>
+  <body>
+    <!-- main section -->
+    <main id="main" class="main">
+      <!-- hero section -->
+      <!--<section id="hero" class="hero">-->
+        <!-- navbar section -->
+        <nav class="nav">
+          <div class="nav-container">
+            <div class="nav-brand">
+              <a href="#">
+                <img src={{url_for('static', filename="/assets/img/logo-removebg-preview.png")}} class="putih" alt="nav-logo" width="120"/>
+              </a>
+            </div>
+            <div class="nav-items">
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="/webgis">Webgis</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li><a href="/getstarted" class="active">Get Started</a></li>
+              </ul>
+            </div>
+            <div class="nav-toggle">
+              <a href="#">
+                <i class="fa-solid fa-bars"></i>
+              </a>
+            </div>
+          </div>
+        </nav>
+        <div class="slides">
+          <div class="slide">
+              <img src={{url_for('static', filename="/assets/img/artikel-img.jpg")}} alt="">
+              <div class="text">Pulau Adonara adalah sebuah pulau yang terletak di Kepulauan Nusa Tenggara, yakni di sebelah timur Pulau Flores yang memiliki luas wilayahnya 509 km², dan titik tertingginya 1.676 m.<p>Adonara Island is an island located in the Nusa Tenggara Islands, which is at the east of Flores Island that has an area of ​​509 km², and the highest point is 1,676m.</p></div>
+            </div>
+          <div class="slide">
+              <img src={{url_for('static', filename="/assets/img/artikel-img2.jpg")}} alt="">
+              <div class="text">Citra satelit landsat 8 untuk melakukan pendeteksian nilai SPL (Suhu Permukaan Laut), Salinitas, dan Klorofil-a di wilayah perairan Pulau Adonara, NTT.
+              <p>Using Landsat 8 satellite imagery to detect sea surface temperature, salinity and chlorophyll-a values ​​in the waters of Adonara Island, NTT.</p>
+              </div>
+          </div>
+          <div class="slide">
+              <img src={{url_for('static', filename="/assets/img/artikel-img3.jpg")}} alt="">
+              <div class="text">Keramba jaring apung adalah salah satu wadah budidaya perairan yang cukup ideal, yang ditempatkan di badan air dalam, seperti waduk, rawa, danau, dan laut.
+                <p>Floating net cages are one of the ideal aquaculture containers, which are placed in deep water bodies, such as reservoirs, swamps, lakes and seas.</p>
+              </div>
+    
+          </div>
+          <div class="navigation">
+              <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+              <a class="next" onclick="plusSlides(-1)">&#10095</a>
+          </div>
+      </div>
+        <!-- end navbar section -->
+        <!-- hero content section -->
+        <!--<div class="hero-text">
+          <h1 class="hero-caption">
+            Amazing Laut <br />
+            yang ada di Indonesia
+          </h1>
+        </div>-->
+        <!-- end hero content section -->
+      </section>
+      <!-- end hero section -->
+      <!-- about us -->
+      <!--<section id="about-us" class="about-us">
+        <div class="about-us-container">
+          <div class="about-us-content-title">
+            <h1>About Us</h1>
+          </div>
+          <div class="about-us-content-text">
+            <h1>4 Pokok :</h1>
             <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
-            officiis?
+              1. Pengolahan data citra Pemetaan dilakukan menggunakan data citra
+              satelit Landsat 8 yang memiliki reolusi 30 meter x 30 meter dan
+              beredar dalam waktu 16 hari. Data citra yang digunakan adalah data
+              citra pada tanggal 14 mei 2021. Pemetaan bertujuan untuk
+              mengetahui kadar suhu permukaan laut dan salinitas di wilayah
+              perairan pulau adonaea. <br /><br />2. Budidaya KJA Keramba jaring
+              apung adalah salah satu wadah budidaya perairan yang cukup ideal,
+              yang ditempatkan di badan air dalam, seperti waduk, rawa, danau,
+              dan laut. Keramba jaring apung menjadi salah satu wadah untuk
+              penerapan budidaya perairan dengan sistem intensif dan
+              terstruktur. <br /><br />3. Lokasi pilihan Pulau Adonara dan solor
+              merupakan pulau kecil yang terletak di wilayah nusa tenggara
+              timur. <br /><br />4. biotatype.id Ingin membudidaya ikan
+              menggunakan keramba jaring apung (KJA)? Namun bingung terkait
+              penentuan lokasi budidaya yang tepat? Biotatype.id hadir
+              memberikan solusi dari permasalahan tersebut. Pada laman ini Anda
+              dapat melakukan deteksi spesies biota laut dan menemukan lokasi
+              budidaya yang tepat berdasarkan parameter yang berhubungan dengan
+              keberlangsungan hidup spesies, yaitu: Suhu Permukaan Laut (SPL)
+              dan kadar salinitas.
             </p>
-            <p>
-            <!--<a href="" class="tombol">MORE INFO</a>-->
-            </p>
+          </div>
         </div>
-        </header>
-        <main>
-        <section id="aboutus">
-            <div class="layar-dalam">
-            <h3>About Us</h3>
-            <p class="ringkasan">
-                4 Pokok :
+      </section>-->
+      <!-- end about us -->
+      <!-- about section -->
+      <section id="about" class="about">
+        <div class="about-text">
+          <div class="about-text-wrapper">
+            <h1>Biotatype.id</h1>
+            <p>
+              Ingin membudidaya ikan menggunakan keramba jaring apung (KJA)? Namun bingung terkait penentuan lokasi budidaya yang tepat? Biotatype.id hadir memberikan solusi dari permasalahan tersebut. Pada laman ini Anda dapat melakukan deteksi spesies biota laut dan menemukan lokasi budidaya yang tepat berdasarkan parameter yang berhubungan dengan keberlangsungan hidup spesies, yaitu: Suhu Permukaan Laut (SPL) dan kadar salinitas<span class="read-more-text">
+              Proses object detection dilakukan menggunakan algoritma YOLOv5 yang dikembangkan tahun 2020 oleh peneliti dan CEO dari Ultralystics LLC yaitu Glen Jocher, algoritma ini menggunakan framework PyTorch yang merupakan pengembangan dari PyTorch YOLOv3. Algoritma ini memiliki 4 pre-trained model dengan berbaga ukuran, yaitu: YOLOv5s (small), YOLOv5m, YOLOv5l, YOLOv5x. Proses modelling dilakukan menggunakan 100 epoch dan menghasilkan nilai MAP 84% dan cukup baik untuk memprediksi kelas yang ada dalam train.
+                Proses penentuan lokasi budidaya pada Biotatype.id ini menggunakan data citra satelit Landsat 8, dan akan memprediksi nilai salinitas dan suhu permukaan laut (SPL) di wilayah perairan Pulau Adonara. Kemudian data prediksi akan dilakukan pembobotan agar dapat menghasilkan titik yang tepat untuk membudidayakan suatu spesies biota laut tertentu.
+                </span>
             </p>
-            <div class="konten-isi">
-                <p>
-                1. Pengolahan data citra
-                    Pemetaan dilakukan menggunakan data citra satelit Landsat 8 yang memiliki reolusi 30 meter x 30 meter dan beredar dalam waktu 16 hari. Data citra yang digunakan adalah data citra pada tanggal 14 mei 2021. Pemetaan bertujuan untuk mengetahui kadar suhu permukaan laut dan salinitas di wilayah perairan pulau adonaea.</p>
-                    <p>2. Budidaya KJA
-                        Keramba jaring apung adalah salah satu wadah budidaya perairan yang cukup ideal, yang ditempatkan di badan air dalam, seperti waduk, rawa, danau, dan laut. Keramba jaring apung menjadi salah satu wadah untuk penerapan budidaya perairan dengan sistem intensif dan terstruktur.
-                        </p>
-                        <p>
-                            3. Lokasi pilihan
-                            Pulau Adonara dan solor merupakan pulau kecil yang terletak di wilayah nusa tenggara timur.</p>
-                            <p>4. biotatype.id
-                                Ingin membudidaya ikan menggunakan keramba jaring apung (KJA)? Namun bingung terkait penentuan lokasi budidaya yang tepat? Biotatype.id hadir memberikan solusi dari permasalahan tersebut. Pada laman ini Anda dapat melakukan deteksi spesies biota laut dan menemukan lokasi budidaya yang tepat berdasarkan parameter yang berhubungan dengan keberlangsungan hidup spesies, yaitu: Suhu Permukaan Laut (SPL) dan kadar salinitas.
-                            </p>
+            <span class="read-more-btn">Read More...</span>
+          </div>
+        </div>
+        <div class="about-image">
+          <iframe width="500" height="280" src="https://www.youtube.com/embed/kvYqrPCXLU0" title="prediksi Jenis Biota Laut" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
+      <!-- end about section -->
+      <!-- artikel section -->
+      <section id="artikel" class="artikel">
+        <div class="artikel-content">
+          <div class="artikel-img">
+            <img src={{url_for('static', filename="/assets/img/artikel-img.jpg")}} alt="artikel-img" />
+          </div>
+          <div class="artikel-title">
+            <h1>Pulau Adonara</h1>
+          </div>
+          <div class="artikel-caption">
+            Pulau Adonara adalah sebuah pulau yang terletak di Kepulauan Nusa Tenggara, yakni di sebelah timur Pulau Flores yang memiliki luas wilayahnya 509 km², dan titik tertingginya 1.676 m.
+          </div>
+        </div>
+        <div class="artikel-content">
+          <div class="artikel-img">
+            <img src={{url_for('static', filename="/assets/img/artikel-img2.jpg")}} alt="artikel-img2" />
+          </div>
+          <div class="artikel-title"><h1>Citra Satelit 8</h1></div>
+          <div class="artikel-caption">
+            Pemetaan dilakukan menggunakan data citra satelit Landsat 8 yang memiliki resolusi 30 meter x 30 meter dan beredar dalam waktu 16 hari. Data citra yang digunakan adalah data citra pada tanggal 14 mei 2021. Pemetaan bertujuan untuk mengetahui kadar suhu permukaan laut dan salinitas di wilayah perairan pulau adonara.
+
+          </div>
+        </div>
+        <div class="artikel-content">
+          <div class="artikel-img">
+            <img src={{url_for('static', filename="/assets/img/artikel-img3.jpg")}} alt="artikel-img3" />
+          </div>
+          <div class="artikel-title"><h1>Keramba Jaring Apung</h1></div>
+          <div class="artikel-caption">
+            Keramba jaring apung adalah salah satu wadah budidaya perairan yang cukup ideal, yang ditempatkan di badan air dalam, seperti waduk, rawa, danau, dan laut. Keramba jaring apung menjadi salah satu wadah untuk penerapan budidaya perairan dengan sistem intensif dan terstruktur.
+          </div>
+        </div>
+      </section>
+      <!-- end artikel section -->
+      <!-- image section -->
+      <section id="gallery" class="gallery">
+        <div class="container-gallery">
+          <img src={{url_for('static', filename="assets/img/udang.jpg")}} alt="udang.jpg" />
+          <img src={{url_for('static', filename="assets/img/tenggiri.jpg")}} alt="tenggiri.jpg" />
+          <img src={{url_for('static', filename="assets/img/belanak.jpg")}} alt="belanak.jpg" />
+          <img src={{url_for('static', filename="assets/img/baronang.jpg")}} alt="baronang.jpg" />
+          <img src={{url_for('static', filename="assets/img/kakap merah.jpg")}} alt="kakap-merah.jpg" />
+          <img src={{url_for('static', filename="assets/img/lobster.jpg")}} alt="lobster.jpg" />
+          <img src={{url_for('static', filename="assets/img/kerapu.jpg")}} alt="kerapu.jpg" />
+          <img src={{url_for('static', filename="assets/img/rumput laut.jpg")}} alt="rumput-laut.jpg" />
+          <img src={{url_for('static', filename="assets/img/kerang hijau.jpg")}} alt="kerang-hijau.jpg" />
+          <img src={{url_for('static', filename="assets/img/abalone.jpg")}} alt="abalone.jpg" />
+        </div>
+      </section>
+      <!-- end image section -->
+      <!-- team section -->
+      <section id="team" class="team">
+        <div class="team-container">
+          <div class="team-title">
+            <h1>Profile Team</h1>
+          </div>
+          <div class="team-data">
+            <div class="tem-data-1">
+              <img src={{url_for('static', filename="/assets/img/ft (5).jpeg")}} alt="Catur-Agus-Baktiar.jpg" />
+              <h1>Catur Agus Baktiar</h1>
+              <h1>UI/UX</h1>
             </div>
+            <div class="tem-data-2">
+              <img src={{url_for('static', filename="/assets/img/ft (4).jpeg")}} alt="Ramadhan-Suhendra.jpg" />
+              <h1>Ramadhan Suhendra</h1>
+              <h1>Deployment</h1>
             </div>
-        </section>
-        <!--<section class="abuabu" id="support">
-            <div class="layar-dalam support">
-            <div>
-                <img src="asset/matahari.png" />
-                <h6>In Every Condition</h6>
-                <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                illum recusandae nostrum. Obcaecati, quos vel.
-                </p>
+            <div class="tem-data-3">
+              <img src={{url_for('static', filename="/assets/img/ft (3).jpeg")}} alt="Tri-Yanti.jpg" />
+              <h1>Tri Yanti</h1>
+              <h1>SIG</h1>
             </div>
-            <div>
-                <img src="asset/tas.png" />
-                <h6>Professional Team</h6>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Exercitationem, ea voluptatem corporis molestias obcaecati
-                deleniti.
-                </p>
+            <div class="tem-data-4">
+              <img src={{url_for('static', filename="/assets/img/ft (2).jpeg")}} alt="Zahra-Inayah-Nurhaliza.jpg"/>
+              <h1>Zahra Inayah Nurhaliza</h1>
+              <h1>Evaluasi</h1>
             </div>
-            <div>
-                <img src="asset/kompas.png" />
-                <h6>Expert Hikers</h6>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Exercitationem, ea voluptatem corporis molestias obcaecati
-                deleniti.
-                </p>
+            <div class="tem-data-5">
+              <img src={{url_for('static', filename="/assets/img/ft (1).jpeg")}} alt="Khovivah-Nur-Azizah.jpg" />
+              <h1>Khovivah Nur Azizah</h1>
+              <h1>Data Visualization</h1>
             </div>
-            </div>
-        </section>-->
-        <section id="gallery">
-            <div><img src="/img/abalone.jpg" /></div>
-            <div><img src="/img/baronang.jpg" /></div>
-            <div><img src="/img/belanak.jpg" /></div>
-            <div><img src="/img/kakap merah.jpg" /></div>
-            <div><img src="/img/tenggiri.jpg" /></div>
-            <div><img src="/img/kerang hijau.jpg" /></div>
-            <div><img src="/img/kerapu.jpg" /></div>
-            <div><img src="/img/lobster.jpg" /></div>
-            <div><img src="/img/rumput laut.jpg" /></div>
-            <div><img src="/img/udang.jpg" /></div>
-        </section>
-        <section class="quote">
-            <div class="layar-dalam">
-            <p>Jogja terbuat dari rindu, pulang dan angkringan.</p>
-            </div>
-        </section>
-        <section id="team">
-            <div class="layar-dalam">
-            <h3>Our Team</h3>
-            <p class="ringkasan">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
-                laborum!
-            </p>
-            <div class="tim">
-                <div>
-                <img src="/img/foto1.jpg" />
-                <h6>Tri Yanti</h6>
-                <span>SIG</span>
+          </div>
+        </div>
+      </section>
+      <!-- end team section -->
+      <!-- blog section -->
+      <div id="blog" class="blog">
+        <div class="blog-container">
+          <div class="blog-content-title">
+            <h1>Blog</h1>
+          </div>
+          <div class="blog-content">
+            <h1>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+              fugit.
+            </h1>
+            <div class="blog-card">
+              <div class="blog-card-content">
+                <div class="blog-card-img">
+                  <img src={{url_for('static', filename="/assets/img/SALINITAS.png")}} alt="blog-image1.jpg"/>
                 </div>
-                <div>
-                <img src="/img/foto2.jpg" />
-                <h6>Ramdhan Suhendra</h6>
-                <span>Deployment</span>
+                <div class="blog-card-caption">
+                  <div class="blog-card-title"><h1>What About SEA?</h1></div>
+                  <div class="blog-card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Placeat, est omnis? Quas reprehenderit rem nesciunt.
+                  </div>
                 </div>
-                <div>
-                <img src="/img/foto3.jpg" />
-                <h6>Zahra Inayah Nurhaliza</h6>
-                <span>Evaluasi</span>
+              </div>
+              <div class="blog-card-content">
+                <div class="blog-card-img">
+                  <img
+                  src={{url_for('static', filename="/assets/img/SPL.png")}}
+                    alt="blog-image1.jpg"
+                  />
                 </div>
-                <div>
-                <img src="/img/foto4.jpg" />
-                <h6>Khovivah Nur Azizah</h6>
-                <span>Data Visualization</span>
+                <div class="blog-card-caption">
+                  <div class="blog-card-title"><h1>What About SEA?</h1></div>
+                  <div class="blog-card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Placeat, est omnis? Quas reprehenderit rem nesciunt.
+                  </div>
                 </div>
-                <div><img src="/img/foto5 (1).jpg" />
-                    <h6>Catur Agus Baktiar</h6>
-                    <span>UI/UX</span>
-                </div>   
+              </div>
             </div>
-            </div>
-        </section>
-        <section class="abuabu" id="blog">
-            <div class="layar-dalam">
-            <h3>Blog</h3>
-            <p class="ringkasan">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
-                fugit.
-            </p>
-            <div class="blog">
-                <div class="area">
-                <div
-                    class="gambar"
-                    style="background-image: url('asset/blog1.jpg')"
-                ></div>
-                <div class="text">
-                    <article>
-                    <h4><a href="#">What About SEA?</a></h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Placeat, est omnis? Quas reprehenderit rem nesciunt.
-                    </p>
-                    </article>
-                </div>
-                </div>
-                <div class="area">
-                <div
-                    class="gambar"
-                    style="background-image: url('asset/blog2.jpg')"
-                ></div>
-                <div class="text">
-                    <article>
-                    <h4><a href="#">What About Pulau Adanora?</a></h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Placeat, est omnis? Quas reprehenderit rem nesciunt.
-                    </p>
-                    </article>
-                </div>
-                </div>
-            </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </div>
+      <!-- end blog section -->
     </main>
-    <footer id="contact">
-        <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h5>Marine Team</h5>
-                    <ul>
-                        <li><a href="#">was created by students and students from the kampus Merdeka program
-                            who have creative ideas and extraordinary team spirit despite many obstacles and drama but they managed to create me today</a></li>
-                    </ul>
-                </div>
-            <div class="footer-col">
-                <h5>Link</h5>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                </div>
-                <div class="footer-col">
-                    <h5>follow Us</h5>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fa-regular fa-envelope"></i></a>
-                    </div>
-                    </div>
+    <!-- end main section -->
+    <!-- footer section -->
+    <footer id="footer" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-team">
+            <div class="footer-title"><h1>Marine Team</h1></div>
+            <div class="footer-description">
+              <a href="#"
+                >Was created by students and students from the kampus Merdeka
+                program who have creative ideas and extraordinary team spirit
+                despite many obstacles and drama but they managed to create me
+                today</a
+              >
             </div>
-                <div class="layar-dalam">
-                    <div class="copyright">&copy; 2022 Kampus Merdeka</div>
-                </div>
-        </footer>
+          </div>
+          <div class="footer-menu">
+            <div class="footer-title"><h1>Link</h1></div>
+            <div class="footer-description">
+              <a href="#">About Us</a><a href="#">Gallery</a><a href="#">Team</a
+              ><a href="#">Blog</a><a href="#">Contact</a>
+            </div>
+          </div>
+          <div class="footer-social-media">
+            <div class="footer-title"><h1>Follow Us</h1></div>
+            <div class="footer-description">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">© 2022 Kampus Merdeka</div>
+      </div>
     </footer>
-    </div>
-    <script
-        src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"
-    ></script>
-    <script src={{url_for('static', filename="javascript.js")}}></script>
-</body>
+    <!-- end footer section -->
+    <script src={{url_for('static', filename="/assets/js/javascript.js")}}></script>
+  <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+          showSlides(slideIndex += n);
+      }
+
+      function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("slide");
+          if (n > slides.length)
+          {
+              slideIndex = 1;
+          }
+          if (n < 1)
+          {
+              slideIndex = slides.length
+          }
+          for(i = 0; i < slides.length; i++)
+          {
+              slides[i].style.display = "none";                
+          }
+          slides[slideIndex-1].style.display = "block";
+      }
+
+  </script>
+  </body>
 </html>

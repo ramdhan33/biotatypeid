@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <link rel="stylesheet" href="asset/leaflet-panel-layers-master/src/leaflet-panel-layers.css" />
+    <style type="text/css"></style>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+
+    <title>Webgis Biotatype.id</title>
+    
+  </head>
+  <body>
+	<div id="mapid" style="width:100%; height: 665px;"></div>
+  </body>
+  <script>
+    //setting wilayah maps
+    let host = "http://localhost:5000";
+    var petaku = L.map('mapid').setView([-8.326845, 123.158532], 12);
+
+        var LayerKita=L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1
+        });
+        petaku.addLayer(LayerKita);
+        //marker
+        var lokasi1 = L.icon ({iconUrl: host + "/static/assets/img/marker4.png",
+        iconSize: [30,30],
+        })
+                L.marker([-8.221859, 123.246019], {icon:lokasi1}).addTo(petaku).bindPopup("<img src='https://akcdn.detik.net.id/visual/2019/08/22/15cf22b4-fd19-42d3-9a0b-0658358609ca_169.jpeg?w=650 width='200px' ><br></br><table><tr><td width='100px'>Titik</td><td>: 1</td></tr><tr><td width='100px'>Latitude-longitude</td><td>: -8.221859, 123.246019</td></tr><tr><td width='100px'>Kadar SPL:</td><td>: 24,3 Celcius</td></tr><tr><td width='100px'>Kadar salinitas:</td><td>: 25 Ppt</td></tr><tr><td width='100px'>Potensi budidaya:</td><td>: Abalone</td></tr><tr><td width='100px'>Nilai kesesuaian:</td><td>: 6</td></tr></table>");;
+        var lokasi2 = L.icon ({iconUrl: host + "/static/assets/img/marker4.png",
+        iconSize: [30,30],
+        })
+                L.marker([-8.302702, 123.319763], {icon:lokasi2}).addTo(petaku).bindPopup("<img src='https://images2.prokal.co/webbulunganpost/files/berita/2020/02/25/8d74e8a0f8a2855eb45832c2e128a130.jpg' width='200px' ><br></br><table><tr><td width='100px'>Titik</td><td>: 2</td></tr><tr><td width='100px'>Latitude-longitude</td><td>: -8.302702, 123.319763</td></tr><tr><td width='100px'>Kadar SPL:</td><td>: 26,6 Celcius</td></tr><tr><td width='100px'>Kadar salinitas:</td><td>: 21 Ppt</td></tr><tr><td width='100px'>Potensi budidaya:</td><td>: Udang</td></tr><tr><td width='100px'>Nilai kesesuaian:</td><td>: 5</td></tr></table>");;
+        var lokasi3 = L.icon ({iconUrl: host + "/static/assets/img/marker4.png",
+        iconSize: [30,30],
+        })
+                L.marker([-8.356209, 123.317335], {icon:lokasi2}).addTo(petaku).bindPopup("<img src='https://images2.prokal.co/webbulunganpost/files/berita/2020/02/25/8d74e8a0f8a2855eb45832c2e128a130.jpg' width='200px' ><br></br><table><tr><td width='100px'>Titik</td><td>: 3</td></tr><tr><td width='100px'>Latitude-longitude</td><td>: -8.356209, 123.3173359</td></tr><tr><td width='100px'>Kadar SPL:</td><td>: 27,7 Celcius</td></tr><tr><td width='100px'>Kadar salinitas:</td><td>: 18 Ppt</td></tr><tr><td width='100px'>Potensi budidaya:</td><td>: Udang</td></tr><tr><td width='100px'>Nilai kesesuaian:</td><td>: 5</td></tr></table>");;
+        var lokasi4 = L.icon ({iconUrl: host + "/static/assets/img/marker4.png",
+        iconSize: [30,30],
+        })
+                L.marker([-8.400091, 123.209425], {icon:lokasi2}).addTo(petaku).bindPopup("<img src='https://png.pngtree.com/png-clipart/20210912/original/pngtree-seafood-shrimp-aquatic-abalone-png-image_6766922.jpg' width='200px' ><br></br><table><tr><td width='100px'>Titik</td><td>: 4</td></tr><tr><td width='100px'>Latitude-longitude</td><td>: -8.400091, 123.209425</td></tr><tr><td width='100px'>Kadar SPL:</td><td>: 25,2 Celcius</td></tr><tr><td width='100px'>Kadar salinitas:</td><td>: 13 Ppt</td></tr><tr><td width='100px'>Potensi budidaya:</td><td>: Udang, Abalone</td></tr><tr><td width='100px'>Nilai kesesuaian:</td><td>: 4 untuk udang dan abalone</td></tr></table>");;
+        var lokasi5 = L.icon ({iconUrl: host + "/static/assets/img/marker4.png",
+        iconSize: [30,30],
+        })
+                L.marker([-8.394169, 123.144981], {icon:lokasi2}).addTo(petaku).bindPopup("<img src='https://asset-a.grid.id/crop/0x0:0x0/945x630/photo/2021/01/22/2406073460.jpg' width='200px' ><br></br><table><tr><td width='100px'>Titik</td><td>: 5</td></tr><tr><td width='100px'>Latitude-longitude</td><td>: -8.394169, 123.144981</td></tr><tr><td width='100px'>Kadar SPL:</td><td>: 26,1 Celcius</td></tr><tr><td width='100px'>Kadar salinitas:</td><td>: 17 Ppt</td></tr><tr><td width='100px'>Potensi budidaya:</td><td>: Udang</td></tr><tr><td width='100px'>Nilai kesesuaian:</td><td>: 5</td></tr></table>");;
+        var lokasi6 = L.icon ({iconUrl: host + "/static/assets/img/marker4.png",
+        iconSize: [30,30],
+        })
+                L.marker([-8.397274, 123.277331], {icon:lokasi2}).addTo(petaku).bindPopup("<img src='https://asset-a.grid.id/crop/0x0:0x0/945x630/photo/2021/01/22/2406073460.jpg' width='200px' ><br></br><table><tr><td width='100px'>Titik</td><td>: 6</td></tr><tr><td width='100px'>Latitude-longitude</td><td>: -8.397274, 123.277331</td></tr><tr><td width='100px'>Kadar SPL:</td><td>: 25,4 Celcius</td></tr><tr><td width='100px'>Kadar salinitas:</td><td>: 16 Ppt</td></tr><tr><td width='100px'>Potensi budidaya:</td><td>: Udang</td></tr><tr><td width='100px'>Nilai kesesuaian:</td><td>: 5</td></tr></table>");;
+        var lokasi7 = L.icon ({iconUrl: host + "/static/assets/img/marker4.png",
+        iconSize: [30,30],
+        })
+                L.marker([-8.403141, 123.048230], {icon:lokasi2}).addTo(petaku).bindPopup("<img src='https://doktersehat.com/wp-content/uploads/2020/11/abalone-doktersehat.jpg' width='200px' ><br></br><table><tr><td width='100px'>Titik</td><td>: 7</td></tr><tr><td width='100px'>Latitude-longitude</td><td>: -8.403141, 123.048230</td></tr><tr><td width='100px'>Kadar SPL:</td><td>: 25,2 Celcius</td></tr><tr><td width='100px'>Kadar salinitas:</td><td>: 27 Ppt</td></tr><tr><td width='100px'>Potensi budidaya:</td><td>: Abalone</td></tr><tr><td width='100px'>Nilai kesesuaian:</td><td>: 6</td></tr></table>");;
+        var lokasi8 = L.icon ({iconUrl: host + "/static/assets/img/marker4.png",
+        iconSize: [30,30],
+        })
+                L.marker([-8.302456, 123.036958], {icon:lokasi2}).addTo(petaku).bindPopup("<img src='https://png.pngtree.com/png-clipart/20210912/original/pngtree-seafood-shrimp-aquatic-abalone-png-image_6766922.jpg' width='200px' ><br></br><table><tr><td width='100px'>Titik</td><td>: 8</td></tr><tr><td width='100px'>Latitude-longitude</td><td>: -8.302456, 123.036958</td></tr><tr><td width='100px'>Kadar SPL:</td><td>: 24,8 Celcius</td></tr><tr><td width='100px'>Kadar salinitas:</td><td>: 23 Ppt</td></tr><tr><td width='100px'>Potensi budidaya:</td><td>: Abalone, udang</td></tr><tr><td width='100px'>Nilai kesesuaian:</td><td>: 6 untuk abalone, 5 untuk udang</td></tr></table>");;
+        var lokasi9 = L.icon ({iconUrl: host + "/static/assets/img/marker4.png",
+        iconSize: [30,30],
+        })
+                L.marker([-8.232944, 123.140059], {icon:lokasi2}).addTo(petaku).bindPopup("<img src='https://metrobali.com/wp-content/uploads/2015/06/Kerapu.jpg' width='200px' ><br></br><table><tr><td width='100px'>Titik</td><td>: 9</td></tr><tr><td width='100px'>Latitude-longitude</td><td>: -8.232944, 123.140059</td></tr><tr><td width='100px'>Kadar SPL:</td><td>: 27,1 Celcius</td></tr><tr><td width='100px'>Kadar salinitas:</td><td>: 16 Ppt</td></tr><tr><td width='100px'>Potensi budidaya:</td><td>: Ikan kerapu,Abalone, udang</td></tr><tr><td width='100px'>Nilai kesesuaian:</td><td>: 6 untuk abalone, 5 untuk udang dan ikan kerapu</td></tr></table>");;
+        var lokasi10 = L.icon ({iconUrl: host + "/static/assets/img/marker4.png",
+        iconSize: [30,30],
+        })
+                L.marker([-8.273224, 123.077995], {icon:lokasi2}).addTo(petaku).bindPopup("<img src='https://rimbakita.com/wp-content/uploads/2020/12/kakap.jpg' width='200px' ><br></br><table><tr><td width='100px'>Titik</td><td>: 10</td></tr><tr><td width='100px'>Latitude-longitude</td><td>: -8.273224, 123.077995</td></tr><tr><td width='100px'>Kadar SPL:</td><td>: 27,9 Celcius</td></tr><tr><td width='100px'>Kadar salinitas:</td><td>: 24 Ppt</td></tr><tr><td width='100px'>Potensi budidaya:</td><td>: Ikan kakap merah, Ikan kerapu, Abalone, udang</td></tr><tr><td width='100px'>Nilai kesesuaian:</td><td>: 6 untuk abalone dan udang, 5 untuk Ikan kerapu dan kakap merah</td></tr></table>");;
+
+        function featureToMarker(feature, latlng) {
+            return L.marker(latlng, {
+                icon: L.divIcon({
+                    className: 'marker-'+feature.properties.amenity,
+                    html: iconByName(feature.properties.amenity),
+                    iconUrl: '../images/markers/'+feature.properties.amenity+'.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34],
+                    shadowSize: [41, 41]
+                })
+            });
+        }
+        
+
+        var baseLayers = [
+            {
+                name: "OpenStreetMap",
+                layer: LayerKita
+            },
+            {
+                name: "OpenCycleMap",
+                layer: L.tileLayer('http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+            },
+            {
+                name: "Outdoors",
+                layer: L.tileLayer('http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png')
+            }
+        ];
+        var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers);
+
+petaku.addControl(panelLayers);
+	</script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src={{url_for('static', filename="/assets/js/javascript.js")}}></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</html>
