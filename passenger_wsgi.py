@@ -6,6 +6,7 @@ import time
 from label_description import label as lb
 
 # Do not Touch! 
+os.environ["CUDA_VISIBLE_DEVICES"]=""
 project_root = os.path.dirname(os.path.realpath('__file__'))
 template_path = os.path.join(project_root, 'app/templates')
 static_path = os.path.join(project_root, 'app/static')
